@@ -5,3 +5,11 @@ readings = [
     {"name": "fridge",     "room": "kitchen", "temp": 4.2,  "online": False},
     {"name": "patio",      "room": "outside", "temp": 29.8, "online": True},
 ]
+
+# print each device's name and temperature
+def list_devices(devices):
+    for device in devices:
+        print(f"{device['name']}: {device['temp']}°C")
+
+list_devices(readings)
+
