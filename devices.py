@@ -23,3 +23,16 @@ def average_temp(devices):
 
 avg_temp = average_temp(readings)
 print(f"Average temperature: {avg_temp:.2f}°C")
+
+# return the whole dictionary of the hottest device
+def hottest(devices):
+    hottest_temp = 0.0
+    hottest_device = None
+    for device in devices:
+        if device['temp'] > hottest_temp:
+            hottest_temp = device['temp']
+            hottest_device = device
+    return hottest_device
+
+hottest_device = hottest(readings)
+print(f"{hottest_device['name']}: {hottest_device['room']}: {hottest_device['temp']}°C: {hottest_device['online']}")
