@@ -13,3 +13,13 @@ def list_devices(devices):
 
 list_devices(readings)
 
+# return the average temperature
+def average_temp(devices):
+    sum_temp = 0
+    for device in devices:
+        sum_temp+= device['temp']
+        avg_temp = sum_temp / len(devices)
+    return avg_temp
+
+avg_temp = average_temp(readings)
+print(f"Average temperature: {avg_temp:.2f}°C")
