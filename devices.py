@@ -47,3 +47,16 @@ def to_status(device):
     return status
 
 print(to_status(readings[3]))
+
+# return a dictionary of room names to lists of device names
+def by_room(devices):
+    room_dict = {}
+    for device in devices:
+        room = device["room"]
+        if room not in room_dict:
+            room_dict[room] = []
+        room_dict[room].append(device["name"])
+    return room_dict
+
+
+print(by_room(readings))
