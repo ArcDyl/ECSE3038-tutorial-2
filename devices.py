@@ -36,3 +36,14 @@ def hottest(devices):
 
 hottest_device = hottest(readings)
 print(f"{hottest_device['name']}: {hottest_device['room']}: {hottest_device['temp']}°C: {hottest_device['online']}")
+
+# take one device, return a new dictionary
+def to_status(device):
+    status = {
+        "device": device["name"],
+        "status": "online" if device["online"] else "offline",
+        "celsius": device["temp"],
+    }
+    return status
+
+print(to_status(readings[3]))
